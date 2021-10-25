@@ -1,0 +1,2 @@
+# SuperHeroes
+Basic Django project
