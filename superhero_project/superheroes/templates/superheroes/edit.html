@@ -1,31 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit {{hero.name}}</title>
-</head>
-<body>
-    <h1>Original Details</h1>
-    <h2>{{hero.name}}</h2>
-    <p>Alter Ego: <span>{{hero.alter_ego}}</span></p>
-    <p>Primary Ability: <span>{{hero.primary_ability}}</span></p>
-    <p>Secondary Ability: <span>{{hero.secondary_ability}}</span></p>
-    <p>Catch Phrase: <span>{{hero.catch_phrase}}</span></p>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="h1 text-center">Original Details</h1>
+      <h2 class="h2 text-center">{{hero.name}}</h2>
+      <div class="col text-center h4 me-0">Alter Ego:</div>
+      <div class="col text-center ms-0">{{hero.alter_ego}}</div>
+      <div class="col text-center h4 me-0">Primary Ability:</div>
+      <div class="col text-center ms-0">{{hero.primary_ability}}</div>
+      <div class="col text-center h4 me-0">Secondary Ability:</div>
+      <div class="col text-center ms-0">{{hero.secondary_ability}}</div>
+      <div class="col text-center h4 me-0">Catch Phrase:</div>
+      <div class="col text-center ms-0 mb-4">{{hero.catch_phrase}}</div>
 
-    <form action="{% url 'superheroes:edit' hero.id %}" method="post">
-      {% csrf_token %} Name: <input type="text" name="name" id="name" value="{{hero.name}}" /><br />
-      Alter Ego: <input type="text" name="alter_ego" id="alter_ego" value="{{hero.alter_ego}}"/><br />
-      Primary Ability: <input type="text" name="primary" id="primary" value="{{hero.primary_ability}}"/><br />
-      Secondary Ability:
-      <input type="text" name="secondary" id="secondary" value="{{hero.secondary_ability}}"/><br />
-      Catch Phrase:
-      <input type="text" name="catchphrase" id="catchphrase" value="{{hero.catch_phrase}}"/><br />
-      <input type="submit" value="Save" />
-    </form>
-    <a href="{% url 'superheroes:index' %}">Return</a>
-    <a href="{% url 'superheroes:detail' hero.id %}">Discard Changes</a>
-    
-</body>
+      <form action="{% url 'superheroes:edit' hero.id %}" method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="name">Name</span>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            value="{{hero.name}}"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="alter_ego">Alter Ego</span>
+          <input
+            type="text"
+            name="alter_ego"
+            class="form-control"
+            value="{{hero.alter_ego}}"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="primary">Primary Ability</span>
+          <input
+            type="text"
+            name="primary"
+            class="form-control"
+            value="{{hero.primary_ability}}"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="secondary">Secondary Ability</span>
+          <input
+            type="text"
+            name="secondary"
+            class="form-control"
+            value="{{hero.secondary_ability}}"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="catchphrase">Catch Phrase</span>
+          <input
+            type="text"
+            name="catchphrase"
+            class="form-control"
+            value="{{hero.catch_phrase}}"
+          />
+        </div>
+        <div class="row m-auto">
+          <div class="w-25 m-auto btn-group">
+            <input type="submit" value="Save" class="btn btn-success" />
+            <a href="{% url 'superheroes:index' %}" class="btn btn-secondary"
+              >Return</a
+            >
+            <a
+              href="{% url 'superheroes:detail' hero.id %}"
+              class="btn btn-secondary"
+              >Discard Changes</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
