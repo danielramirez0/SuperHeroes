@@ -8,14 +8,12 @@
   </head>
   <body>
     <h1>{{hero.name}}</h1>
-    <p>Alter Ego</p>
-    <h2>{{hero.alter_ego}}</h2>
-    <p>Primary Ability</p>
-    <h2>{{hero.primary_ability}}</h2>
-    <p>Secondary Ability</p>
-    <h2>{{hero.secondary_ability}}</h2>
-    <p>Catch Phrase</p>
-    <h2>{{hero.catch_phrase}}</h2>
+    <p>Alter Ego: <span>{{hero.alter_ego}}</span></p>
+    <p>Primary Ability: <span>{{hero.primary_ability}}</span></p>
+    <p>Secondary Ability: <span>{{hero.secondary_ability}}</span></p>
+    <p>Catch Phrase: <span>{{hero.catch_phrase}}</span></p>
     <a href="{% url 'superheroes:index' %}">Return</a>
+    <a href="{% url 'superheroes:edit' hero.id %}">Edit</a>
+    <a href="{% url 'superheroes:delete' hero.id %}">Delete</a>
   </body>
 </html>

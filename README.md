@@ -24,9 +24,8 @@
   - Catchphrase
 - Delete a superhero from the database
 
-
 ### Resources
 
 Has image of my favorite superhero on the web application’s home page using https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-Utilizes Bootstrap via Bootstrap Content Delivery Network (CDN) to stylize templates. 
+Utilizes Bootstrap via Bootstrap Content Delivery Network (CDN) to stylize templates
